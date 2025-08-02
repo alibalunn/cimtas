@@ -1,0 +1,194 @@
+﻿@model LeaveTrack.Application.ViewModels.LeaveViewModel;
+<h1>Leave operations</h1>
+
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+<div class="container mt-5">
+    <div class="card shadow rounded-4">
+        <div class="card-body">
+            <h5 class="card-title mb-4">İzin Girişi</h5>
+            <form asp-action="AddNewLeave" asp-controller="Leave" method="post">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label asp-for="LeaveRequest.EmployeeId" class="form-label">Çalışan Seç</label>
+                        <select asp-for="LeaveRequest.EmployeeId" id="employeeSelect" class="form-select" style="width: 100%">
+                            <option value="0">Seçiniz</option>
+                            @if(Model?.Employees != null){
+                                @foreach (var employee in Model.Employees)
+                                {
+                                    <option value="@employee.Id" itemid="@employee.Id">@employee.FullName</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="LeaveRequest.EmployeeId" class="text-danger"></span>
+                        <div id="formError" class="text-danger d-none"></div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="LeaveRequest.DepartmentId" class="form-label">Departman</label>
+                        <select asp-for="LeaveRequest.DepartmentId" class="form-select" id="departmentSelect">
+                            <option value="">Seçiniz</option>
+                            @if(Model?.Departments != null){
+                                @foreach (var department in Model.Departments)
+                                {
+                                    <option value="@department.Id">@department.Name</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="LeaveRequest.DepartmentId" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="LeaveRequest.LeaveTypeId" class="form-label">İzin Türü</label>
+                        <select asp-for="LeaveRequest.LeaveTypeId" class="form-select">
+                            <option value="">Seçiniz</option>
+                            @if(Model?.LeaveTypes != null){
+                                @foreach(var leaveType in Model.LeaveTypes){
+                                    <option value="@leaveType.Id">@leaveType.Name</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="LeaveRequest.LeaveTypeId" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="LeaveRequest.StartDate" class="form-label">Başlangıç Tarihi</label>
+                        <input type="date" asp-for="LeaveRequest.StartDate" class="form-control" />
+                        <span asp-validation-for="LeaveRequest.StartDate" id="formTimeError" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="LeaveRequest.EndDate" class="form-label">Bitiş Tarihi</label>
+                        <input type="date" asp-for="LeaveRequest.EndDate" class="form-control" />
+                        <span asp-validation-for="LeaveRequest.EndDate" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div>Toplam izin: <span id="totalLeaveAmount">20</span></div>
+                    <div>Kullanılabilir izin: <span id="remainingLeave">20</span></div>
+                    <div class="col-12 text-end mt-3">
+                        <button type="submit" class="btn btn-primary px-4">Kaydet</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.full.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#employeeSelect').select2({
+                tags: true,
+                placeholder: "Çalışan seçin veya yeni ekleyin",
+                allowClear: true
+            });
+
+            $('#employeeSelect').on('select2:select', async function (event) {
+                    const selectedId = parseInt(event.params.data.id);
+                    
+                    if(selectedId !== null && selectedId !== undefined){
+                        const selectedEmployee = await sendRequest(`/employee/details/${selectedId}`, 'GET');
+                        const data = selectedEmployee.data;
+
+                        const employeeInfo = {
+                            departmentId: data.departmentId,
+                            departmentName: data.departmentName,
+                            leaveAmount: data.leaveAmount,
+                            totalLeaveAmount: data.totalLeaveAmount
+                        };
+
+                        document.getElementById('departmentSelect').value = employeeInfo.departmentId;
+                        document.getElementById('remainingLeave').textContent = employeeInfo.leaveAmount;
+                        document.getElementById('totalLeaveAmount').textContent = employeeInfo.totalLeaveAmount;
+                    }
+            });
+
+                $('#employeeSelect').on('select2:select select2:unselect', function () {
+                const selectedEmployeeId = $(this).val();
+
+                if (selectedEmployeeId !== "0" && selectedEmployeeId !== null && selectedEmployeeId !== "") {
+                    $('#formError').addClass('d-none');
+                }
+            });
+
+            $('#departmentSelect').on('change', async (event) => {
+                const selectedId = parseInt(event.target.value === '' ? 0 : event.target.value);
+
+                if(selectedId !== null && selectedId !== undefined){
+                    const department = await sendRequest(`/department/employees/${selectedId}`, 'GET');
+                    const data = department.data;
+
+                    const employeeSelect = $('#employeeSelect');
+                    employeeSelect.empty();
+
+                    employeeSelect.append(new Option("Seçiniz", "0"));
+
+                    data.employees.forEach(emp => {
+                        const option = new Option(emp.fullName, emp.id, false, false);
+                        employeeSelect.append(option);
+                    });
+
+                    employeeSelect.val("0").trigger('change');
+                }
+            });
+
+        $('form').on('submit', function () {
+            let hasError = false;
+
+            // Employee check
+            const selectedEmployeeId = $('#employeeSelect').val();
+            if (selectedEmployeeId === "0" || selectedEmployeeId === null || selectedEmployeeId === "") {
+                $('#formError')
+                    .removeClass('d-none')
+                    .text('Lütfen çalışan seçiniz.');
+                hasError = true;
+            } else {
+                $('#formError').addClass('d-none');
+            }
+
+            // Date check
+            const startDateVal = $('#LeaveRequest_StartDate').val();
+            const endDateVal = $('#LeaveRequest_EndDate').val();
+            const today = new Date();
+
+            if (!startDateVal || !endDateVal) {
+                $('#formTimeError')
+                    .removeClass('d-none')
+                    .text('Lütfen başlangıç ve bitiş tarihlerini doldurun.');
+                hasError = true;
+            } 
+            
+            else if (new Date(endDateVal) < new Date(startDateVal)) {
+                $('#formTimeError')
+                    .removeClass('d-none')
+                    .text('Bitiş tarihi başlangıç tarihinden küçük olamaz.');
+                hasError = true;
+            }
+
+            else if(new Date(startDateVal) < today || new Date(endDateVal) < today){
+                $('#formTimeError')
+                    .removeClass('d-none')
+                    .text('Lütfen başlangıç ve bitiş tarihlerini ileri tarihli belirleyiniz.');
+                hasError = true;
+            }
+
+            else {
+                $('#formTimeError').addClass('d-none');
+            }
+
+            return !hasError;
+        });
+        });
+    </script>
+}

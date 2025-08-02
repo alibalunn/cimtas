@@ -1,0 +1,20 @@
+﻿@model LeaveTrack.Domain.Entities.Employee
+
+@{
+    ViewData["Title"] = "Employee Form";
+}
+
+<h2>Employee Form</h2>
+
+@using (Html.BeginForm("PostEmployee", "Leave", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.LabelFor(m => m.FullName)
+        @Html.TextBoxFor(m => m.FullName)
+        @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit">Submit</button>
+}

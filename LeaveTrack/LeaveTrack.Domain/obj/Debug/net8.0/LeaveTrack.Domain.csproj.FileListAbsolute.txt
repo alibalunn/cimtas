@@ -1,0 +1,11 @@
+C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Domain\bin\Debug\net8.0\LeaveTrack.Domain.deps.json
+C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Domain\bin\Debug\net8.0\LeaveTrack.Domain.dll
+C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Domain\bin\Debug\net8.0\LeaveTrack.Domain.pdb
+C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Domain\obj\Debug\net8.0\LeaveTrack.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Domain\obj\Debug\net8.0\LeaveTrack.Domain.AssemblyInfoInputs.cache
+C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Domain\obj\Debug\net8.0\LeaveTrack.Domain.AssemblyInfo.cs
+C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Domain\obj\Debug\net8.0\LeaveTrack.Domain.csproj.CoreCompileInputs.cache
+C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Domain\obj\Debug\net8.0\LeaveTrack.Domain.dll
+C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Domain\obj\Debug\net8.0\refint\LeaveTrack.Domain.dll
+C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Domain\obj\Debug\net8.0\LeaveTrack.Domain.pdb
+C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Domain\obj\Debug\net8.0\ref\LeaveTrack.Domain.dll

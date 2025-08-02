@@ -1,0 +1,162 @@
+﻿@using System.Text.Json
+@model LeaveTrack.Application.ViewModels.DashboardViewModel;
+
+<div class="container">
+    <div class="row">
+        <!-- Congraliations  -->
+        <div class="col-xxl-8 mb-6 order-0">
+            <div class="card">
+                <div class="d-flex align-items-start row">
+                    <div class="col-sm-7">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary mb-3">Hoşgeldiniz, @ViewBag.Username ! 🎉</h5>
+                            <p class="mb-6">
+                                Personel İzin işlemlerini bu panelden yapabilirsiniz
+                            </p>
+
+                            <a asp-action="List" asp-controller="Leave" class="btn btn-sm btn-outline-primary">İzin İşlemleri</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 text-center text-sm-left">
+                        <div class="card-body pb-0 px-0 px-md-6">
+                            <img src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template-free/assets/img/illustrations/man-with-laptop.png"
+                                 height="175"
+                                 alt="View Badge User" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Congraliations -->
+        <!-- Profit -->
+        <div class="col-lg-2 col-md-12 mb-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <p class="mb-1">İzni Yaklaşan Kullanıcı sayısı</p>
+                    <h4 class="card-title mb-3">@Model.UpcomingLeaveCount</h4>
+                </div>
+            </div>
+        </div>
+        <!-- Profit -->
+        <!-- Sales -->
+        <div class="col-lg-2 col-md-12 mb-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <p class="mb-1">Yıllık İzin Alan Personel Sayısı</p>
+                    <h4 class="card-title mb-3">@Model.YearlyTotalLeaveCount</h4>
+                </div>
+            </div>
+        </div>
+        <!-- Sales -->
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <!-- Order Statistics -->
+        <div class="col-md-6 col-lg-6 col-xl-6 order-0 mb-6">
+            <div class="card h-100">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="card-title mb-0">
+                        <h5 class="mb-1 me-2">Aktif İzinler</h5>
+                        <p class="card-subtitle">Toplam personel sayısı: @Model.TotalEmployeeCount</p>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn text-body-secondary p-0"
+                                type="button"
+                                id="orederStatistics"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                            <i class="icon-base bx bx-dots-vertical-rounded icon-lg"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="orederStatistics">
+                            <a class="dropdown-item" href="javascript:void(0);">Select All</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @if (Model.ActiveLeavesEmployees != null && Model.ActiveLeavesEmployees.Any())
+                    {
+                        <ul class="p-0 m-0">
+                            @foreach (var employee in Model.ActiveLeavesEmployees)
+                            {
+                                <li class="d-flex align-items-center mb-5">
+                                    <div class="avatar flex-shrink-0 me-3">
+                                        <span class="avatar-initial rounded bg-label-primary">
+                                            <i class="icon-base bx bx-user"></i>
+                                        </span>
+                                    </div>
+                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                        <div class="me-2">
+                                            <h6 class="mb-0">@employee.FullName</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p class="text-muted">Aktif izin bulunamadı.</p>
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- Order Statistics -->
+        <!-- Chart Card -->
+        <div class="col-md-6 col-lg-6 col-xl-6 order-0 mb-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Aylık Satış Grafiği</h5>
+                </div>
+                <div class="card-body">
+                    <div style="height: 350px;">
+                        <!-- Canvas kapsayıcı yüksekliği -->
+                        <canvas id="bar-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        $(document).ready(function () {
+            const monthlyData = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.MonthlyLeaveCounts));
+
+            const ctx = document.getElementById('bar-chart').getContext('2d');
+
+            const myBarChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'],
+                    datasets: [{
+                        label: 'Aylık İzin Sayısı',
+                        data: monthlyData,
+                        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            precision: 0
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+}

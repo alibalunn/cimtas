@@ -1,0 +1,135 @@
+﻿@using LeaveTrack.Domain.Entities;
+@model IEnumerable<LeaveTrack.Application.ViewModels.LeaveListViewModel>
+
+<div class="container my-4">
+    <h4 class="mb-3 d-flex justify-content-between align-items-center">
+        İzin Geçmişi Listeleme
+    </h4>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <!-- Filtre Alanı -->
+    <form id="filterForm" class="row g-3 align-items-center mb-4">
+        <div class="col-sm-4">
+            <label for="filterDepartment" class="form-label">Departman</label>
+            <select id="filterDepartment" class="form-select" name="DepartmentId">
+                <option value="">Tümü</option>
+                @if (ViewBag.DepartmentList != null)
+                {
+                    @foreach (var dep in (IEnumerable<Department>)ViewBag.DepartmentList)
+                    {
+                        <option value="@dep.Id">@dep.Name</option>
+                    }
+                }
+
+            </select>
+        </div>
+
+        <div class="col-sm-3">
+            <label for="filterStartDate" class="form-label">Başlangıç Tarihi</label>
+            <input type="date" class="form-control" id="filterStartDate" name="StartDate" />
+        </div>
+
+        <div class="col-sm-3">
+            <label for="filterEndDate" class="form-label">Bitiş Tarihi</label>
+            <input type="date" class="form-control" id="filterEndDate" name="EndDate" />
+        </div>
+        <div class="col-sm-2 d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary w-100">Filtrele</button>
+        </div>
+    </form>
+
+    <button id="toggleViewBtn" class="btn btn-outline-primary btn-sm mb-4">Liste Görünümü</button>
+    <a asp-action="AddNewLeave" asp-controller="Leave" class="btn btn-outline-primary btn-sm mb-4">Yeni İzin Ekle</a>
+
+    <!-- Kart Görünümü -->
+    <div class="row g-3" id="cardView">
+        @if(Model != null){
+            @foreach (var leave in Model)
+            {
+                var badgeClass = leave.TotalLeaveAmount.HasValue && leave.TotalLeaveAmount.Value > 10 ? "bg-danger" : "bg-success";
+                var badgeText = leave.TotalLeaveAmount.HasValue && leave.TotalLeaveAmount.Value > 10 ? "Aşırı İzin" : "Normal";
+
+                <div class="col-md-6 col-lg-4 leave-item"
+                     data-department="@leave.DepartmentName.ToLower()"
+                     data-start="@leave.StartDate"
+                     data-end="@leave.EndDate"
+                     data-status="@(badgeText == "Aşırı İzin" ? "asiri" : "normal")"
+                     style="display: block;">
+                    <div class="card shadow-sm border-start border-4 @(badgeText == "Aşırı İzin" ? "border-danger" : "border-success")">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">@leave.EmployeeName</h5>
+                            <p class="mb-1"><strong>Departman:</strong> @leave.DepartmentName</p>
+                            <p class="mb-1"><strong>İzin Türü:</strong> @leave.LeaveType</p>
+                            <p class="mb-1"><strong>Tarih:</strong> @leave.StartDate - @leave.EndDate</p>
+                            <p class="mb-1"><strong>Toplam Gün:</strong> @leave.TotalLeaveAmount</p>
+                            <small class="text-muted">Durum: <span class="badge @(badgeClass)">@badgeText</span></small>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else{
+            <h3>Sonuç bulunamadı.</h3>
+        }
+    </div>
+
+    <!-- Liste Görünümü (Başlangıçta gizli) -->
+    <div id="listView" style="display:none;">
+        <table class="table table-striped table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th>Çalışan Adı</th>
+                    <th>Departman</th>
+                    <th>İzin Türü</th>
+                    <th>Tarih</th>
+                    <th>Toplam Gün</th>
+                    <th>Durum</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if(Model != null){
+                    @foreach (var leave in Model)
+                    {
+                        var badgeClass = leave.TotalLeaveAmount.HasValue && leave.TotalLeaveAmount.Value > 10 ? "bg-danger" : "bg-success";
+                        var badgeText = leave.TotalLeaveAmount.HasValue && leave.TotalLeaveAmount.Value > 10 ? "Aşırı İzin" : "Normal";
+
+                        <tr data-department="@leave.DepartmentName.ToLower()"
+                            data-start="@leave.StartDate"
+                            data-end="@leave.EndDate"
+                            data-status="@(badgeText == "Aşırı İzin" ? "asiri" : "normal")"
+                            style="display: table-row;">
+                            <td>@leave.EmployeeName</td>
+                            <td>@leave.DepartmentName</td>
+                            <td>@leave.LeaveType</td>
+                            <td>@leave.StartDate - @leave.EndDate</td>
+                            <td>@leave.TotalLeaveAmount</td>
+                            <td><span class="badge @(badgeClass)">@badgeText</span></td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <h3 class="bg-danger">Sonuç bulunamadı.</h3>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    // Toggle butonu
+    document.getElementById('toggleViewBtn').addEventListener('click', function () {
+        const cardView = document.getElementById('cardView');
+        const listView = document.getElementById('listView');
+
+        if (cardView.style.display === 'none') {
+            cardView.style.display = 'flex';
+            listView.style.display = 'none';
+            this.textContent = 'Liste Görünümü';
+        } else {
+            cardView.style.display = 'none';
+            listView.style.display = 'block';
+            this.textContent = 'Kart Görünümü';
+        }
+    });
+</script>

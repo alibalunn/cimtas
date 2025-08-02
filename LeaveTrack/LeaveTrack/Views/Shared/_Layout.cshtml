@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LeaveTrack</title>
+
+    <link rel="stylesheet" href="~/css/core.css" asp-append-version="true"  />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/LeaveTrack.styles.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="layout-wrapper">
+        <aside class="aside-wrapper">
+            <div class="d-flex nav-logo">
+                <a asp-action="Index" asp-controller="Dashboard">
+                    <img src="https://www.cimtas.com/wp-content/themes/cimtas/assets/images/logos/cimtas.png" alt="image" width="128" />
+                </a>
+            </div>
+            <div class="item-container">
+                @if(User.IsInRole("Admin")){
+                    <a class="nav-item" asp-action="Index" asp-controller="Dashboard">
+                        <div class="nav-item-leftside">
+                            <img class="nav-item-logo" width="16" height="16" src="https://img.icons8.com/material-outlined/24/dashboard-layout.png" alt="dashboard-layout" />
+                            <div>
+                                Dashboard
+                            </div>
+                        </div>
+                        <div class="nav-item-right-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 shape-rendering="geometricPrecision"
+                                 text-rendering="geometricPrecision"
+                                 image-rendering="optimizeQuality"
+                                 fill-rule="evenodd"
+                                 clip-rule="evenodd"
+                                 viewBox="0 0 267 512.43"
+                                 width="12" height="12">
+                                <path fill-rule="nonzero" fill="#000000" d="M3.22 18.9c-4.28-4.3-4.3-11.31-.04-15.64s11.2-4.35 15.48-.04l245.12 245.16c4.28 4.3 4.3 11.31.04 15.64L18.66 509.22a10.874 10.874 0 0 1-15.48-.05c-4.26-4.33-4.24-11.33.04-15.63L240.5 256.22 3.22 18.9z" />
+                            </svg>
+                        </div>
+                    </a>
+                }
+
+                <a class="nav-item" asp-action="List" asp-controller="Leave">
+                    <div class="nav-item-leftside">
+                        <img class="nav-item-logo" width="16" height="16" src="https://img.icons8.com/ios/50/leave.png" alt="leave" />
+                        <div>
+                            İzin işlemleri
+                        </div>
+                    </div>
+                    <div class="nav-item-right-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             shape-rendering="geometricPrecision"
+                             text-rendering="geometricPrecision"
+                             image-rendering="optimizeQuality"
+                             fill-rule="evenodd"
+                             clip-rule="evenodd"
+                             viewBox="0 0 267 512.43"
+                             width="12" height="12">
+                            <path fill-rule="nonzero" fill="#000000" d="M3.22 18.9c-4.28-4.3-4.3-11.31-.04-15.64s11.2-4.35 15.48-.04l245.12 245.16c4.28 4.3 4.3 11.31.04 15.64L18.66 509.22a10.874 10.874 0 0 1-15.48-.05c-4.26-4.33-4.24-11.33.04-15.63L240.5 256.22 3.22 18.9z" />
+                        </svg>
+                    </div>
+                </a>
+                @if(User.IsInRole("Admin")){
+                    <a class="nav-item" asp-action="Index" asp-controller="Admin">
+                        <div class="nav-item-leftside">
+                            <img class="nav-item-logo" width="16" height="16" src="https://img.icons8.com/ios/50/leave.png" alt="leave" />
+                            <div>
+                                İzin ayarları
+                            </div>
+                        </div>
+                        <div class="nav-item-right-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 shape-rendering="geometricPrecision"
+                                 text-rendering="geometricPrecision"
+                                 image-rendering="optimizeQuality"
+                                 fill-rule="evenodd"
+                                 clip-rule="evenodd"
+                                 viewBox="0 0 267 512.43"
+                                 width="12" height="12">
+                                <path fill-rule="nonzero" fill="#000000" d="M3.22 18.9c-4.28-4.3-4.3-11.31-.04-15.64s11.2-4.35 15.48-.04l245.12 245.16c4.28 4.3 4.3 11.31.04 15.64L18.66 509.22a10.874 10.874 0 0 1-15.48-.05c-4.26-4.33-4.24-11.33.04-15.63L240.5 256.22 3.22 18.9z" />
+                            </svg>
+                        </div>
+                    </a>
+                }
+                <a class="nav-item" asp-action="Logout" asp-controller="Auth">
+                    <div class="nav-item-leftside">
+                        <img class="nav-item-logo" width="16" height="16" src="https://img.icons8.com/ios/50/leave.png" alt="leave" />
+                        <div>
+                            Çıkış yap
+                        </div>
+                    </div>
+                    <div class="nav-item-right-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             shape-rendering="geometricPrecision"
+                             text-rendering="geometricPrecision"
+                             image-rendering="optimizeQuality"
+                             fill-rule="evenodd"
+                             clip-rule="evenodd"
+                             viewBox="0 0 267 512.43"
+                             width="12" height="12">
+                            <path fill-rule="nonzero" fill="#000000" d="M3.22 18.9c-4.28-4.3-4.3-11.31-.04-15.64s11.2-4.35 15.48-.04l245.12 245.16c4.28 4.3 4.3 11.31.04 15.64L18.66 509.22a10.874 10.874 0 0 1-15.48-.05c-4.26-4.33-4.24-11.33.04-15.63L240.5 256.22 3.22 18.9z" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </aside>
+        <div class="container">
+            <main class="main" role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script> 
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

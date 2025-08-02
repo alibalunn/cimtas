@@ -1,0 +1,263 @@
+﻿@model LeaveTrack.Application.ViewModels.AdminPanelViewModel;
+
+<div class="container my-5">
+    <h2 class="mb-4">İzin Ayarları Paneli</h2>
+
+    <!-- Maksimum Gün -->
+    <div class="row align-items-start mb-5">
+        <div class="col-md-6">
+            <div class="card p-4 shadow-sm">
+                <h5>Yıllık Maksimum İzin Günü</h5>
+                <form id="maxLeaveForm">
+                    <div class="mb-3">
+                        <label for="maxLeaveDays" class="form-label">Gün Sayısı</label>
+                        <input type="number" class="form-control" id="maxLeaveDays" >
+                    </div>
+                    <button class="btn btn-primary">Güncelle</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+            <div class="card p-4 shadow-sm">
+                <h6>Mevcut Ayar</h6>
+                <table class="table table-bordered table-sm" style="overflow-x: auto;max-height: 300px;">
+                    <thead><tr><th>Gün Sayısı</th></tr></thead>
+                    <tbody id="maxLeaveList">
+                        <tr><td>20</td></tr> <!-- Varsayılan değer -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Departman Ekle -->
+    <div class="row align-items-start mb-5">
+        <div class="col-md-6">
+            <div class="card p-4 shadow-sm">
+                <h5>Yeni Departman</h5>
+                <form id="departmentForm" method="post" asp-action="AddDepartment" asp-controller="Admin">
+                    <div class="mb-3">
+                        <label for="departmentName" class="form-label">Departman Adı</label>
+                        <input type="text" class="form-control" id="departmentName" asp-for="Department.Name"/>
+                    </div>
+                    <button class="btn btn-success">Ekle</button>
+                    <span asp-validation-for="Department.Name" class="text-danger"></span>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+            <div class="card p-4 shadow-sm" style="overflow-x: auto;max-height: 300px;">
+                <h6>Mevcut Departmanlar</h6>
+                <table class="table table-bordered table-sm">
+                    <thead>
+                        <tr>
+                            <th>Departman</th>
+                            <th>İşlem</th>
+                        </tr>    
+                    </thead>
+                    <tbody id="departmentList">
+                        <tr>
+                            <td>İnsan Kaynakları</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Düzenle">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Sil">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Araştırma Geliştirme</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Düzenle">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Sil">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Montaj</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Düzenle">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Sil">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Finans</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Düzenle">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Sil">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>IT</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Düzenle">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Sil">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- İzin Türü -->
+    <div class="row align-items-start mb-5">
+        <div class="col-md-6">
+            <div class="card p-4 shadow-sm">
+                <h5>Yeni İzin Türü</h5>
+                <form id="leaveTypeForm" asp-action="Index" asp-controller="Admin" method="post">
+                    <div class="mb-3">
+                        <label for="leaveType" class="form-label">İzin Türü</label>
+                        <input type="text" class="form-control" id="leaveType" name="Name">
+                    </div>
+                    <button class="btn btn-warning text-white" type="submit">Ekle</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+            <div class="card p-4 shadow-sm" style="overflow-x: auto;max-height: 300px;">
+                <h6>Mevcut İzin Türleri</h6>
+                <table class="table table-bordered table-sm">
+                    <thead>
+                        <tr>
+                            <th>İzin Türü</th>
+                            <th style="width: 80px;">İşlem</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaveTypeList">
+                        <tr>
+                            <td>Yıllık</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Düzenle">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Sil">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hastalık</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Düzenle">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Sil">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Yıllık</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Düzenle">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Sil">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hastalık</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Düzenle">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Sil">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Yıllık</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Düzenle">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Sil">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hastalık</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Düzenle">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Sil">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Yıllık</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Düzenle">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Sil">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hastalık</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Düzenle">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Sil">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // document.getElementById('maxLeaveForm').addEventListener('submit', function(e) {
+    //   e.preventDefault();
+    //   const val = document.getElementById('maxLeaveDays').value;
+    //   document.getElementById('maxLeaveList').innerHTML = `<tr><td>${val}</td></tr>`;
+    //   document.getElementById('maxLeaveDays').value = '';
+    // });
+
+    // document.getElementById('departmentForm').addEventListener('submit', function(e) {
+    //   e.preventDefault();
+    //   const val = document.getElementById('departmentName').value;
+    //   const row = `<tr><td>${val}</td></tr>`;
+    //   document.getElementById('departmentList').innerHTML += row;
+    //   document.getElementById('departmentName').value = '';
+    // });
+
+    // document.getElementById('leaveTypeForm').addEventListener('submit', function(e) {
+    //   e.preventDefault();
+    //   const val = document.getElementById('leaveType').value;
+    //   const row = `<tr><td>${val}</td></tr>`;
+    //   document.getElementById('leaveTypeList').innerHTML += row;
+    //   document.getElementById('leaveType').value = '';
+    // });
+</script>
