@@ -8,7 +8,7 @@
 
 3 -> appsettings.json dosyasında, connection string'i kendi veritabanınıza göre güncelleyiniz.
 
-4 -> Visual Studio ortamında projeyi açınız ve Package Manager Console’u açarak Persistence projesini seçiniz.
+4 -> Visual Studio ortamında projeyi açınız ve Package Manager Console’u açarak Persistence projesini seçiniz. (Proje onion architecture ile yapıldığı için veritabanı işlemleri Persistence katmanında yapıldı )
 
 5 -> Aşağıdaki komutu kullanarak veritabanını oluşturunuz:
 	`Update-Database`
