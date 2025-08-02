@@ -1,0 +1,60 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Sayfa Bulunamadı";
+}
+
+<style>
+    .notfound-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        text-align: center;
+        color: #444;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .notfound-code {
+        font-size: 10rem;
+        font-weight: 700;
+        color: #ff6b6b;
+        margin-bottom: 20px;
+    }
+
+    .notfound-message {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .notfound-desc {
+        font-size: 1.1rem;
+        color: #666;
+        max-width: 500px;
+        margin-bottom: 40px;
+    }
+
+    .btn-home {
+        padding: 12px 30px;
+        background-color: #007bff;
+        color: white;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-home:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+<div class="notfound-container">
+    <div class="notfound-code">404</div>
+    <div class="notfound-message">Üzgünüz, sayfa bulunamadı!</div>
+    <div class="notfound-desc">
+        Aradığınız sayfa taşınmış olabilir ya da URL yanlış yazılmış olabilir.
+    </div>
+    <a href="@(Url.Action("Login", "Auth"))" class="btn-home">Anasayfaya Dön</a>
+</div>

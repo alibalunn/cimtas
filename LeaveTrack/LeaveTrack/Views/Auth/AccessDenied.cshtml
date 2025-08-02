@@ -1,0 +1,15 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Erişim Engellendi";
+}
+
+<div style="text-align:center; padding: 50px;">
+    <h1 style="font-size: 3em; color: #d9534f;">Erişim Engellendi</h1>
+    <p style="font-size: 1.2em; margin: 20px 0;">
+        Bu sayfaya erişim izniniz yok.
+    </p>
+    <a href="@(Url.Action("Login", "Auth"))"
+       style="display:inline-block; padding: 10px 20px; background-color:#0275d8; color:white; text-decoration:none; border-radius: 5px;">
+        Anasayfaya Dön
+    </a>
+</div>

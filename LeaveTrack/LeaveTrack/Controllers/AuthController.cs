@@ -22,7 +22,10 @@ namespace LeaveTrack.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Dashboard");
+                if (User.IsInRole("Admin"))
+                    return RedirectToAction("Index", "Dashboard");
+                else if (User.IsInRole("User"))
+                    return RedirectToAction("List", "Leave");
             }
             
             return View();
@@ -74,6 +77,18 @@ namespace LeaveTrack.Controllers
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login", "Auth");
+        }
+
+        [HttpGet("access-denied")]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
+        [HttpGet("not-found")]
+        public IActionResult NotFound()
+        {
+            return View();
         }
     }
 }

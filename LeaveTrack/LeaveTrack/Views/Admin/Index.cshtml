@@ -2,8 +2,6 @@
 
 <div class="container my-5">
     <h2 class="mb-4">İzin Ayarları Paneli</h2>
-
-    <!-- Maksimum Gün -->
     <div class="row align-items-start mb-5">
         <div class="col-md-6">
             <div class="card p-4 shadow-sm">
@@ -23,14 +21,12 @@
                 <table class="table table-bordered table-sm" style="overflow-x: auto;max-height: 300px;">
                     <thead><tr><th>Gün Sayısı</th></tr></thead>
                     <tbody id="maxLeaveList">
-                        <tr><td>20</td></tr> <!-- Varsayılan değer -->
+                        <tr><td>20</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
-    <!-- Departman Ekle -->
     <div class="row align-items-start mb-5">
         <div class="col-md-6">
             <div class="card p-4 shadow-sm">
@@ -116,8 +112,6 @@
             </div>
         </div>
     </div>
-
-    <!-- İzin Türü -->
     <div class="row align-items-start mb-5">
         <div class="col-md-6">
             <div class="card p-4 shadow-sm">
@@ -236,28 +230,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    // document.getElementById('maxLeaveForm').addEventListener('submit', function(e) {
-    //   e.preventDefault();
-    //   const val = document.getElementById('maxLeaveDays').value;
-    //   document.getElementById('maxLeaveList').innerHTML = `<tr><td>${val}</td></tr>`;
-    //   document.getElementById('maxLeaveDays').value = '';
-    // });
-
-    // document.getElementById('departmentForm').addEventListener('submit', function(e) {
-    //   e.preventDefault();
-    //   const val = document.getElementById('departmentName').value;
-    //   const row = `<tr><td>${val}</td></tr>`;
-    //   document.getElementById('departmentList').innerHTML += row;
-    //   document.getElementById('departmentName').value = '';
-    // });
-
-    // document.getElementById('leaveTypeForm').addEventListener('submit', function(e) {
-    //   e.preventDefault();
-    //   const val = document.getElementById('leaveType').value;
-    //   const row = `<tr><td>${val}</td></tr>`;
-    //   document.getElementById('leaveTypeList').innerHTML += row;
-    //   document.getElementById('leaveType').value = '';
-    // });
-</script>

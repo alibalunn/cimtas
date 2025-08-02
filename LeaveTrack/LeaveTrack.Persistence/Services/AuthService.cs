@@ -1,6 +1,5 @@
 ﻿using LeaveTrack.Application.Interfaces.Repositories;
 using LeaveTrack.Application.Interfaces.Services;
-using System.Threading.Tasks;
 
 namespace LeaveTrack.Persistence.Services
 {

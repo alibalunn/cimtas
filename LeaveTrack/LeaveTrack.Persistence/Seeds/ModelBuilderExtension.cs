@@ -26,8 +26,8 @@ namespace LeaveTrack.Persistence.Seeds
         public static void SeedEmployees(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Employee>().HasData(
-                new Employee { Id = 1, FullName = "Ali Balun", Username = "ali.balun", PasswordHash = "hashedpw1", Role = Role.Admin, DepartmentId = 1, IsSystemUser = true },
-                new Employee { Id = 2, FullName = "Ayşe Yılmaz", Username = "ayse.yilmaz", PasswordHash = "hashedpw2", Role = Role.User, DepartmentId = 2, IsSystemUser = false, AnnualLeaveLimit = 15 },
+                new Employee { Id = 1, FullName = "Ali Balun", Username = "admin_admin", PasswordHash = "adminpass1", Role = Role.Admin, DepartmentId = 1, IsSystemUser = true },
+                new Employee { Id = 2, FullName = "Ayşe Yılmaz", Username = "user_user", PasswordHash = "userpass1", Role = Role.User, DepartmentId = 2, IsSystemUser = true, AnnualLeaveLimit = 15 },
                 new Employee { Id = 3, FullName = "Mehmet Demir", Username = "mehmet.demir", PasswordHash = "hashedpw3", Role = Role.User, DepartmentId = 3, IsSystemUser = false, AnnualLeaveLimit = 18 },
                 new Employee { Id = 4, FullName = "Zeynep Kaya", Username = "zeynep.kaya", PasswordHash = "hashedpw4", Role = Role.User, DepartmentId = 4, IsSystemUser = false, AnnualLeaveLimit = 14 },
                 new Employee { Id = 5, FullName = "Emre Can", Username = "emre.can", PasswordHash = "hashedpw5", Role = Role.User, DepartmentId = 5, IsSystemUser = false, AnnualLeaveLimit = 20 },

@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1F01A2B-13BA-4D76-88B7-AC484E96E3BA}|LeaveTrack\\LeaveTrack.csproj|c:\\users\\casper\\desktop\\cimtas\\cimtasweb\\leavetrack\\leavetrack\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F01A2B-13BA-4D76-88B7-AC484E96E3BA}|LeaveTrack\\LeaveTrack.csproj|solutionrelative:leavetrack\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E1F01A2B-13BA-4D76-88B7-AC484E96E3BA}|LeaveTrack\\LeaveTrack.csproj|c:\\users\\casper\\desktop\\cimtas\\cimtasweb\\leavetrack\\leavetrack\\views\\auth\\notfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F01A2B-13BA-4D76-88B7-AC484E96E3BA}|LeaveTrack\\LeaveTrack.csproj|solutionrelative:leavetrack\\views\\auth\\notfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F01A2B-13BA-4D76-88B7-AC484E96E3BA}|LeaveTrack\\LeaveTrack.csproj|c:\\users\\casper\\desktop\\cimtas\\cimtasweb\\leavetrack\\leavetrack\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F01A2B-13BA-4D76-88B7-AC484E96E3BA}|LeaveTrack\\LeaveTrack.csproj|solutionrelative:leavetrack\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{741869A9-4129-4CB1-9FDA-D42EFEC7EB98}|LeaveTrack.Application\\LeaveTrack.Application.csproj|c:\\users\\casper\\desktop\\cimtas\\cimtasweb\\leavetrack\\leavetrack.application\\requestobjects\\usercredentialsrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{741869A9-4129-4CB1-9FDA-D42EFEC7EB98}|LeaveTrack.Application\\LeaveTrack.Application.csproj|solutionrelative:leavetrack.application\\requestobjects\\usercredentialsrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5522F8CE-CD3B-4519-9F98-15D497FE3A42}|LeaveTrack.Persistence\\LeaveTrack.Persistence.csproj|c:\\users\\casper\\desktop\\cimtas\\cimtasweb\\leavetrack\\leavetrack.persistence\\repositories\\leaverepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5522F8CE-CD3B-4519-9F98-15D497FE3A42}|LeaveTrack.Persistence\\LeaveTrack.Persistence.csproj|solutionrelative:leavetrack.persistence\\repositories\\leaverepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E1F01A2B-13BA-4D76-88B7-AC484E96E3BA}|LeaveTrack\\LeaveTrack.csproj|c:\\users\\casper\\desktop\\cimtas\\cimtasweb\\leavetrack\\leavetrack\\views\\auth\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F01A2B-13BA-4D76-88B7-AC484E96E3BA}|LeaveTrack\\LeaveTrack.csproj|solutionrelative:leavetrack\\views\\auth\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1F01A2B-13BA-4D76-88B7-AC484E96E3BA}|LeaveTrack\\LeaveTrack.csproj|c:\\users\\casper\\desktop\\cimtas\\cimtasweb\\leavetrack\\leavetrack\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1F01A2B-13BA-4D76-88B7-AC484E96E3BA}|LeaveTrack\\LeaveTrack.csproj|solutionrelative:leavetrack\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5522F8CE-CD3B-4519-9F98-15D497FE3A42}|LeaveTrack.Persistence\\LeaveTrack.Persistence.csproj|c:\\users\\casper\\desktop\\cimtas\\cimtasweb\\leavetrack\\leavetrack.persistence\\seeds\\modelbuilderextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5522F8CE-CD3B-4519-9F98-15D497FE3A42}|LeaveTrack.Persistence\\LeaveTrack.Persistence.csproj|solutionrelative:leavetrack.persistence\\seeds\\modelbuilderextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F01A2B-13BA-4D76-88B7-AC484E96E3BA}|LeaveTrack\\LeaveTrack.csproj|c:\\users\\casper\\desktop\\cimtas\\cimtasweb\\leavetrack\\leavetrack\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E1F01A2B-13BA-4D76-88B7-AC484E96E3BA}|LeaveTrack\\LeaveTrack.csproj|solutionrelative:leavetrack\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{E1F01A2B-13BA-4D76-88B7-AC484E96E3BA}|LeaveTrack\\LeaveTrack.csproj|c:\\users\\casper\\desktop\\cimtas\\cimtasweb\\leavetrack\\leavetrack\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F01A2B-13BA-4D76-88B7-AC484E96E3BA}|LeaveTrack\\LeaveTrack.csproj|solutionrelative:leavetrack\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,92 +31,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack\\Views\\Auth\\Login.cshtml",
-              "RelativeDocumentMoniker": "LeaveTrack\\Views\\Auth\\Login.cshtml",
-              "ToolTip": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack\\Views\\Auth\\Login.cshtml",
-              "RelativeToolTip": "LeaveTrack\\Views\\Auth\\Login.cshtml",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAAF0AAAAbAAAAAAAAAA==",
+              "Title": "NotFound.cshtml",
+              "DocumentMoniker": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack\\Views\\Auth\\NotFound.cshtml",
+              "RelativeDocumentMoniker": "LeaveTrack\\Views\\Auth\\NotFound.cshtml",
+              "ToolTip": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack\\Views\\Auth\\NotFound.cshtml",
+              "RelativeToolTip": "LeaveTrack\\Views\\Auth\\NotFound.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADkAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-02T09:20:28.541Z",
+              "WhenOpened": "2025-08-02T10:09:42.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UserCredentialsRequest.cs",
-              "DocumentMoniker": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack.Application\\RequestObjects\\UserCredentialsRequest.cs",
-              "RelativeDocumentMoniker": "LeaveTrack.Application\\RequestObjects\\UserCredentialsRequest.cs",
-              "ToolTip": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack.Application\\RequestObjects\\UserCredentialsRequest.cs",
-              "RelativeToolTip": "LeaveTrack.Application\\RequestObjects\\UserCredentialsRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T09:17:17.723Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "LeaveTrack\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "LeaveTrack\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAYwDcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T08:47:29.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LeaveRepository.cs",
-              "DocumentMoniker": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack.Persistence\\Repositories\\LeaveRepository.cs",
-              "RelativeDocumentMoniker": "LeaveTrack.Persistence\\Repositories\\LeaveRepository.cs",
-              "ToolTip": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack.Persistence\\Repositories\\LeaveRepository.cs",
-              "RelativeToolTip": "LeaveTrack.Persistence\\Repositories\\LeaveRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T08:43:03.596Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ModelBuilderExtension.cs",
-              "DocumentMoniker": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack.Persistence\\Seeds\\ModelBuilderExtension.cs",
-              "RelativeDocumentMoniker": "LeaveTrack.Persistence\\Seeds\\ModelBuilderExtension.cs",
-              "ToolTip": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack.Persistence\\Seeds\\ModelBuilderExtension.cs",
-              "RelativeToolTip": "LeaveTrack.Persistence\\Seeds\\ModelBuilderExtension.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAzwEwAAACoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T08:40:42.706Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack\\Program.cs",
               "RelativeDocumentMoniker": "LeaveTrack\\Program.cs",
               "ToolTip": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack\\Program.cs",
               "RelativeToolTip": "LeaveTrack\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T07:32:38.902Z",
+              "WhenOpened": "2025-08-02T10:05:17.941Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack\\appsettings.json",
-              "RelativeDocumentMoniker": "LeaveTrack\\appsettings.json",
-              "ToolTip": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack\\appsettings.json",
-              "RelativeToolTip": "LeaveTrack\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-02T08:37:08.63Z",
+              "DocumentIndex": 1,
+              "Title": "AccessDenied.cshtml",
+              "DocumentMoniker": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack\\Views\\Auth\\AccessDenied.cshtml",
+              "RelativeDocumentMoniker": "LeaveTrack\\Views\\Auth\\AccessDenied.cshtml",
+              "ToolTip": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack\\Views\\Auth\\AccessDenied.cshtml",
+              "RelativeToolTip": "LeaveTrack\\Views\\Auth\\AccessDenied.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-02T10:05:02.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "LeaveTrack\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\CASPER\\Desktop\\Cimtas\\CimtasWeb\\LeaveTrack\\LeaveTrack\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "LeaveTrack\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowFoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-02T10:02:01.503Z",
               "EditorCaption": ""
             }
           ]

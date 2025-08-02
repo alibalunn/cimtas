@@ -151,3 +151,4 @@ C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack\obj\Debug\net8.0\
 C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack\obj\Debug\net8.0\LeaveTrack.pdb
 C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack\obj\Debug\net8.0\LeaveTrack.genruntimeconfig.cache
 C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack\obj\Debug\net8.0\ref\LeaveTrack.dll
+C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack\obj\Debug\net8.0\LeaveTrack.sourcelink.json

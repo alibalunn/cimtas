@@ -17,3 +17,4 @@ C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Persistence\obj\D
 C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Persistence\obj\Debug\net8.0\LeaveTrack.Persistence.pdb
 C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Persistence\obj\Debug\net8.0\LeaveTrack.Persistence.genruntimeconfig.cache
 C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Persistence\obj\Debug\net8.0\ref\LeaveTrack.Persistence.dll
+C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Persistence\obj\Debug\net8.0\LeaveTrack.Persistence.sourcelink.json

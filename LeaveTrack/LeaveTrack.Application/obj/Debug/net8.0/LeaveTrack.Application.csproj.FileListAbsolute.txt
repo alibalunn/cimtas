@@ -13,3 +13,4 @@ C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Application\obj\D
 C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Application\obj\Debug\net8.0\refint\LeaveTrack.Application.dll
 C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Application\obj\Debug\net8.0\LeaveTrack.Application.pdb
 C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Application\obj\Debug\net8.0\ref\LeaveTrack.Application.dll
+C:\Users\CASPER\Desktop\Cimtas\CimtasWeb\LeaveTrack\LeaveTrack.Application\obj\Debug\net8.0\LeaveTrack.Application.sourcelink.json

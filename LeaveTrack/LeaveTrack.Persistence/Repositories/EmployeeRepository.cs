@@ -2,8 +2,6 @@
 using LeaveTrack.Domain.Entities;
 using LeaveTrack.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
-
 namespace LeaveTrack.Persistence.Repositories
 {
     public class EmployeeRepository : Repository<Employee>, IEmployeeRepository
